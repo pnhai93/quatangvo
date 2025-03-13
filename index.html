@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuÃ  Táº·ng Vá»£ YÃªu ğŸ’–</title>
+    <title>Quà T?ng V? Yêu ??</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,21 +21,42 @@
             background-color: pink;
             border: none;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.1s;
+        }
+        #message {
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+            min-height: 30px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Vá»£ yÃªu Æ¡i, cÃ³ báº¥t ngá» cho em nÃ¨! ğŸ’•</h1>
-    <p>Chá»‰ cáº§n báº¥m vÃ o nÃºt dÆ°á»›i Ä‘Ã¢y Ä‘á»ƒ nháº­n quÃ ...</p>
+    <h1>V? yêu ?i, có quà nè! ??</h1>
+    <p>Ch? c?n b?m vào nút d??i ?ây ?? nh?n...</p>
     
     <div id="container">
-        <button id="funButton">Nháº¥n vÃ o Ä‘Ã¢y</button>
+        <button id="funButton">Nh?n quà</button>
     </div>
+    
+    <p id="message"></p>
 
     <script>
         const button = document.getElementById("funButton");
+        const message = document.getElementById("message");
+
+        const trollMessages = [
+            "Nhanh h?n xíu n?a ?i v? yêu! ??",
+            "Ch?m quá nè! ??",
+            "Ôi tr?i, suıt n?a b?m ???c r?i! ??",
+            "V?n ch?a ?? nhanh ?âu nha! ??",
+            "V? ?i, c? lên nào! ??",
+            "T??ng d? à? Còn lâu nhó! ??",
+            "Haha, v? b?m h?t r?i! ??",
+            "Ch?c v? c?n luy?n thêm ph?n x? r?i! ?????"
+        ];
 
         function moveButton() {
             const maxX = window.innerWidth - button.clientWidth;
@@ -48,13 +69,32 @@
             button.style.top = randomY + "px";
         }
 
-        // Ãp dá»¥ng cho cáº£ Ä‘iá»‡n thoáº¡i vÃ  mÃ¡y tÃ­nh
-        button.addEventListener("mouseover", moveButton);
-        button.addEventListener("touchstart", moveButton);
+        function showMessage() {
+            const randomIndex = Math.floor(Math.random() * trollMessages.length);
+            message.textContent = trollMessages[randomIndex];
+        }
 
-        button.addEventListener("click", () => {
-            alert("Haha! KhÃ´ng dá»… váº­y Ä‘Ã¢u vá»£ yÃªu! ğŸ˜†â¤ï¸");
+        // Khi v? v?a ch?m vào, nút ch?y ngay
+        button.addEventListener("mouseover", () => {
+            moveButton();
+            showMessage();
         });
+
+        button.addEventListener("touchstart", () => {
+            moveButton();
+            showMessage();
+        });
+
+        // N?u b?m ???c (r?t hi?m), hi?n th? thông báo troll
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            alert("Haha! Không d? v?y ?âu v? yêu! ????");
+            moveButton();
+            showMessage();
+        });
+
+        // ??m b?o nút luôn di chuy?n liên t?c (ch?n m?i trick)
+        setInterval(moveButton, 800);
     </script>
 
 </body>
