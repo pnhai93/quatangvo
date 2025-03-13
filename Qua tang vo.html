@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quà Tặng Vợ Yêu 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #container {
+            position: relative;
+            height: 300px;
+        }
+        #funButton {
+            position: absolute;
+            padding: 15px 25px;
+            font-size: 18px;
+            background-color: pink;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vợ yêu ơi, có bất ngờ cho em nè! 💕</h1>
+    <p>Chỉ cần bấm vào nút dưới đây để nhận quà...</p>
+    
+    <div id="container">
+        <button id="funButton">Nhấn vào đây</button>
+    </div>
+
+    <script>
+        const button = document.getElementById("funButton");
+
+        function moveButton() {
+            const maxX = window.innerWidth - button.clientWidth;
+            const maxY = window.innerHeight - button.clientHeight;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            button.style.left = randomX + "px";
+            button.style.top = randomY + "px";
+        }
+
+        // Áp dụng cho cả điện thoại và máy tính
+        button.addEventListener("mouseover", moveButton);
+        button.addEventListener("touchstart", moveButton);
+
+        button.addEventListener("click", () => {
+            alert("Haha! Không dễ vậy đâu vợ yêu! 😆❤️");
+        });
+    </script>
+
+</body>
+</html>
