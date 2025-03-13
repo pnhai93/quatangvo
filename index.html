@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qu� T?ng V? Y�u ??</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Quà Tặng Vợ Yêu 💖</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
         }
+
         #container {
             position: relative;
             height: 300px;
         }
+
         #funButton {
             position: absolute;
             padding: 15px 25px;
@@ -23,6 +27,7 @@
             cursor: pointer;
             transition: 0.1s;
         }
+
         #message {
             font-size: 20px;
             color: red;
@@ -32,15 +37,16 @@
         }
     </style>
 </head>
+
 <body>
 
-    <h1>V? y�u ?i, c� qu� n�! ??</h1>
-    <p>Ch? c?n b?m v�o n�t d??i ?�y ?? nh?n...</p>
-    
+    <h1>Vợ yêu ơi, có quà nè! 💕</h1>
+    <p>Chỉ cần bấm vào nút dưới đây để nhận...</p>
+
     <div id="container">
-        <button id="funButton">Nh?n qu�</button>
+        <button id="funButton">Nhận quà</button>
     </div>
-    
+
     <p id="message"></p>
 
     <script>
@@ -48,14 +54,14 @@
         const message = document.getElementById("message");
 
         const trollMessages = [
-            "Nhanh h?n x�u n?a ?i v? y�u! ??",
-            "Ch?m qu� n�! ??",
-            "�i tr?i, su�t n?a b?m ???c r?i! ??",
-            "V?n ch?a ?? nhanh ?�u nha! ??",
-            "V? ?i, c? l�n n�o! ??",
-            "T??ng d? �? C�n l�u nh�! ??",
-            "Haha, v? b?m h?t r?i! ??",
-            "Ch?c v? c?n luy?n th�m ph?n x? r?i! ?????"
+            "Nhanh hơn xíu nữa đi vợ yêu! 😆",
+            "Chậm quá nè! 😂",
+            "Ôi trời, suýt nữa bấm được rồi! 😝",
+            "Vẫn chưa đủ nhanh đâu nha! 🤣",
+            "Vợ ơi, cố lên nào! 😜",
+            "Tưởng dễ à? Còn lâu nhó! 😏",
+            "Haha, vợ bấm hụt rồi! 🤭",
+            "Chắc vợ cần luyện thêm phản xạ rồi! 🏃‍♀️"
         ];
 
         function moveButton() {
@@ -74,7 +80,7 @@
             message.textContent = trollMessages[randomIndex];
         }
 
-        // Khi v? v?a ch?m v�o, n�t ch?y ngay
+        // Khi vợ vừa chạm vào, nút chạy ngay
         button.addEventListener("mouseover", () => {
             moveButton();
             showMessage();
@@ -85,17 +91,18 @@
             showMessage();
         });
 
-        // N?u b?m ???c (r?t hi?m), hi?n th? th�ng b�o troll
+        // Nếu bấm được (rất hiếm), hiển thị thông báo troll
         button.addEventListener("click", (e) => {
             e.preventDefault();
-            alert("Haha! Kh�ng d? v?y ?�u v? y�u! ????");
+            alert("Haha! Không dễ vậy đâu vợ yêu! 😆❤️");
             moveButton();
             showMessage();
         });
 
-        // ??m b?o n�t lu�n di chuy?n li�n t?c (ch?n m?i trick)
+        // Đảm bảo nút luôn di chuyển liên tục (chặn mọi trick)
         setInterval(moveButton, 800);
     </script>
 
 </body>
+
 </html>
