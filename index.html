@@ -91,16 +91,8 @@
             showMessage();
         });
 
-        // Nếu bấm được (rất hiếm), hiển thị thông báo troll
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
-            alert("Haha! Không dễ vậy đâu vợ yêu! 😆❤️");
-            moveButton();
-            showMessage();
-        });
-
         // Đảm bảo nút luôn di chuyển liên tục (chặn mọi trick)
-        setInterval(moveButton, 800);
+        setInterval(moveButton, 500);
     </script>
 
 </body>
